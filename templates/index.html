@@ -2,50 +2,15 @@
 <html>
 
 <head>
-<style>
-
-body{
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-
-background-image: url("static/cyber.jpg");
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-
-form{
-background:rgba(0,0,0,0.6);
-padding:20px;
-border-radius:10px;
-}
-
-
-input{
-padding:10px;
-font-size:16px;
-border:none;
-outline:none;
-border-radius:5px;
-}
-
-
-input:focus{
-box-shadow:0 0 15px #00ffcc;
-
-button{
-padding:10px 15px;
-border:none;
-border-radius:5px;
-background:#00ffcc;
-cursor:pointer;
-}
-
-</style>
+<link rel="stylesheet" href="../static/style.css">
 </head>
 
 <body>
+    <header>
+                <h1 style="color: #000000; text-align: center; margin-bottom: 30px;">
+      Identification of url
+    </h1>
+    </header>
 
 <form action="/submit" method="POST">
 <input type="url" name="user_text" placeholder="Enter a link">

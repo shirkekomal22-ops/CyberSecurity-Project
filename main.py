@@ -14,6 +14,6 @@ def submit():
     with open("data.txt", "a") as f:
         f.write(text + "\n")
 
-    return "Wait patiently"
+    return "Coming soon"
 
 app.run(debug=True)
