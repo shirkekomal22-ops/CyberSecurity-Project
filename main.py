@@ -67,9 +67,9 @@ def submit():
 
     except Exception as e:
         ip = f"Error: {e}"
-        malicious = "N/A"
-        suspicious = "N/A"
-        harmless = "N/A"
+        malicious = 0
+        suspicious = 0
+        harmless = 0
 
     return render_template(
         "result.html",
