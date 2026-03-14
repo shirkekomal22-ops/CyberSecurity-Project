@@ -1,21 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<link rel="stylesheet" href="../static/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Identification Tool</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 
 <body>
+    <!-- HEADER -->
     <header>
-                <h1 style="color: #000000; text-align: center; margin-bottom: 30px;">
-      Identification of url
-    </h1>
+        <div class="header-container">
+            <div class="logo">🔗 URLIdentifier</div>
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-<form action="/submit" method="POST">
-<input type="url" name="user_text" placeholder="Enter a link">
-<button type="submit">Submit</button>
-</form>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Identify URLs with Confidence</h1>
+            <p>Analyze and identify the nature of any URL instantly. Get detailed information about web links.</p>
+            <form action="/submit" method="POST" class="hero-form">
+                <input type="url" name="user_text" placeholder="Enter a URL to analyze..." required>
+                <button type="submit">Identify URL</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <h2>About Our Service</h2>
+            <p>URLIdentifier is a powerful tool designed to help you understand and categorize URLs. Whether you're concerned about security, need to validate website legitimacy, or simply want detailed information about web links, our service provides comprehensive analysis and instant results.</p>
+            <p>Our advanced detection system analyzes URLs against multiple security databases and provides real-time insights.</p>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="features">
+        <div class="features-container">
+            <h2>Our Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Security Analysis</h3>
+                    <p>Detect malicious URLs and potential threats in real-time</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Results</h3>
+                    <p>Get comprehensive analysis in seconds</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Detailed Reports</h3>
+                    <p>View detailed information about any URL</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>Reliable</h3>
+                    <p>Trusted by thousands of users daily</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-container">
+            <!-- TEAM SECTION -->
+            <div class="team-section">
+                <h2>Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-photo">👨‍💼</div>
+                        <h3>John Smith</h3>
+                        <p class="role">Lead Developer</p>
+                        <p class="bio">Expert in cybersecurity and web development</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo">👩‍💼</div>
+                        <h3>Sarah Johnson</h3>
+                        <p class="role">Security Analyst</p>
+                        <p class="bio">Specializes in URL threat detection</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo">👨‍💻</div>
+                        <h3>Mike Davis</h3>
+                        <p class="role">Backend Engineer</p>
+                        <p class="bio">Database and API optimization expert</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo">👩‍💻</div>
+                        <h3>Emily Chen</h3>
+                        <p class="role">UI/UX Designer</p>
+                        <p class="bio">Creates beautiful and intuitive interfaces</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-content">
+                <h3>Contact Us</h3>
+                <p>Email: info@urlidentifier.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <p>Address: 123 Tech Street, Silicon Valley, CA 94025</p>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 URLIdentifier. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
