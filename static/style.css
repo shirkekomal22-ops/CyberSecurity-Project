@@ -373,20 +373,27 @@ footer {
     left: 100%;
 }
 
-.team-photo {
-    font-size: 80px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
+..team-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 2px solid rgba(0, 240, 255, 0.3);
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(157, 0, 255, 0.1) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
-    background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(157, 0, 255, 0.1) 100%);
-    border-radius: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 120px;
+    transition: transform 0.3s ease;
 }
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 
 .team-card:hover .team-photo {
     transform: scale(1.1) rotate(5deg);
@@ -526,3 +533,4 @@ footer {
         width: 100px;
     }
 }
+

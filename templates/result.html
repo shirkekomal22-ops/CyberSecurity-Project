@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Analysis Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body class="result-body">
+
+    <!-- Top navigation similar to first page -->
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="nav-left">
+                <span class="brand-icon">🔗</span>
+                <span class="brand-name">
+                    <span class="brand-main">URLIdentifier</span>
+                </span>
+            </div>
+            <div class="nav-right">
+                <a href="/" class="nav-link">Home</a>
+                <a href="#details" class="nav-link">Details</a>
+                <a href="#tips" class="nav-link">Safety Tips</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="result-main">
+        <div class="result-container">
+        <div class="result-inner">
+            <header class="result-header">
+                <h1>Scan Result</h1>
+                <p class="result-subtitle">
+                    Security overview for the scanned URL / IP address.
+                </p>
+            </header>
+
+        {% if malicious > 0 %}
+            {% set overall_status = 'danger' %}
+            {% set overall_text = 'Potentially Malicious' %}
+            {% set overall_desc = 'We detected malicious activity. Avoid visiting or sharing this link.' %}
+        {% elif suspicious > 0 %}
+            {% set overall_status = 'warning' %}
+            {% set overall_text = 'Suspicious' %}
+            {% set overall_desc = 'Some engines flagged this as suspicious. Proceed with extreme caution.' %}
+        {% else %}
+            {% set overall_status = 'safe' %}
+            {% set overall_text = 'No Immediate Threats Detected' %}
+            {% set overall_desc = 'No engines flagged this as malicious, but always stay cautious online.' %}
+        {% endif %}
+
+        <section class="url-info-section">
+            <h3>
+                <span class="section-icon section-icon-blue">🔎</span>
+                <span>URL Information</span>
+            </h3>
+            <div class="url-info-grid">
+                <div class="url-info-item url-main">
+                    <span class="url-info-label">Entered URL</span>
+                    <span class="url-info-value url-highlight">{{ url }}</span>
+                </div>
+                <div class="url-info-item">
+                    <span class="url-info-label">Domain Name</span>
+                    <span class="url-info-value">{{ domain_name }}</span>
+                </div>
+                <div class="url-info-item">
+                    <span class="url-info-label">Protocol</span>
+                    <span class="url-info-value">{{ protocol }}</span>
+                </div>
+                <div class="url-info-item">
+                    <span class="url-info-label">URL Length</span>
+                    <span class="url-info-value">{{ url_length }} characters</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section" id="summary">
+            <div class="summary-card {{ overall_status }}">
+                <h2>Overall Status</h2>
+                <p class="status-badge">{{ overall_text }}</p>
+                <p class="status-description">{{ overall_desc }}</p>
+            </div>
+        </section>
+
+        <section class="risk-section">
+            <h3>
+                <span class="section-icon section-icon-amber">⚠</span>
+                <span>Risk Meter</span>
+            </h3>
+            <div class="risk-score-row">
+                <span class="risk-label">Risk Score</span>
+                <span class="risk-value">{{ risk_score }}%</span>
+            </div>
+            <div class="risk-bar">
+                <div
+                    class="risk-bar-fill {{ overall_status }}"
+                    style="width: {{ risk_score }}%;"
+                ></div>
+            </div>
+            <div class="risk-bar-scale">
+                <span>Low</span>
+                <span>Medium</span>
+                <span>High</span>
+            </div>
+        </section>
+
+        <section class="details-section" id="details">
+            <h3>Scan Details</h3>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <span class="detail-label">IP Address</span>
+                    <span class="detail-value">{{ ip }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Malicious detections</span>
+                    <span class="detail-value danger-text">{{ malicious }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Suspicious detections</span>
+                    <span class="detail-value warning-text">{{ suspicious }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Harmless detections</span>
+                    <span class="detail-value safe-text">{{ harmless }}</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="tips-section" id="tips">
+            <h3>Safety Tips</h3>
+            <ul class="tips-list">
+                <li>Only open links from people and websites you trust.</li>
+                <li>Check for HTTPS and a valid certificate before entering any sensitive information.</li>
+                <li>Keep your browser, operating system, and antivirus software up to date.</li>
+                <li>If in doubt, avoid downloading files or entering credentials on suspicious pages.</li>
+            </ul>
+        </section>
+
+        <div class="actions">
+            <a href="/" class="btn-primary">Scan another URL</a>
+        </div>
+        </div>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Identification Tool</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -79,25 +78,33 @@
                 <h2>Our Team</h2>
                 <div class="team-grid">
                     <div class="team-card">
-                        <div class="team-photo">👨‍💼</div>
+                        <div class="team-photo">
+                            <img src="{{ url_for('static', filename='images/john-smith.jpg') }}" alt="John Smith">
+                        </div>
                         <h3>John Smith</h3>
                         <p class="role">Lead Developer</p>
                         <p class="bio">Expert in cybersecurity and web development</p>
                     </div>
                     <div class="team-card">
-                        <div class="team-photo">👩‍💼</div>
+                        <div class="team-photo">
+                            <img src="{{ url_for('static', filename='images/sarah-johnson.jpg') }}" alt="Sarah Johnson">
+                        </div>
                         <h3>Sarah Johnson</h3>
                         <p class="role">Security Analyst</p>
                         <p class="bio">Specializes in URL threat detection</p>
                     </div>
                     <div class="team-card">
-                        <div class="team-photo">👨‍💻</div>
+                        <div class="team-photo">
+                            <img src="{{ url_for('static', filename='images/mike-davis.jpg') }}" alt="Mike Davis">
+                        </div>
                         <h3>Mike Davis</h3>
                         <p class="role">Backend Engineer</p>
                         <p class="bio">Database and API optimization expert</p>
                     </div>
                     <div class="team-card">
-                        <div class="team-photo">👩‍💻</div>
+                        <div class="team-photo">
+                            <img src="{{ url_for('static', filename='images/emily-chen.jpg') }}" alt="Emily Chen">
+                        </div>
                         <h3>Emily Chen</h3>
                         <p class="role">UI/UX Designer</p>
                         <p class="bio">Creates beautiful and intuitive interfaces</p>
@@ -120,6 +127,7 @@
         </div>
     </footer>
 
-</body>
 
+
+</body>
 </html>
